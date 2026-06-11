@@ -107,7 +107,8 @@
   .fix-feedback.fail { background: var(--fail-bg); color: #7f1d1d; }
 
   /* AI CHAT */
-  .chat-wrap { display: flex; flex-direction: column; height: calc(100vh - 50px - 48px); }
+  #s-ask.active { display: flex !important; flex-direction: column; max-width: 860px; height: calc(100vh - 50px - 48px); }
+  .chat-wrap { display: flex; flex-direction: column; flex: 1; min-height: 0; }
   .chat-msgs { flex: 1; overflow-y: auto; padding: 16px 0; display: flex; flex-direction: column; gap: 14px; }
   .msg { max-width: 680px; font-size: 14px; line-height: 1.7; }
   .msg.user { align-self: flex-end; background: var(--green); color: #fff; padding: 9px 13px; border-radius: 14px 14px 4px 14px; }
@@ -651,8 +652,6 @@
           <textarea style="width:100%;border:1px solid #bbddd0;border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;resize:vertical;min-height:52px;outline:none;background:#fff;color:#1a1a1a;" placeholder="e.g. I will add alt text to the 3 images on our homepage..."></textarea>
           <div style="font-size:12px;margin-top:8px;color:#5a6b63;">Progress over perfection — one fix this week puts you ahead of most businesses in Pakistan.</div>
         </div>
-      </div>
-    </div>
       </div>
     </div>
 

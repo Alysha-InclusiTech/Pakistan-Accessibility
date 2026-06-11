@@ -182,8 +182,8 @@
     <div class="nav-label">Learn WCAG</div>
     <button class="nav-btn active" onclick="go('home',this)"><span class="ni">🏠</span>Home</button>
     <button class="nav-btn" onclick="go('pour',this)"><span class="ni">📖</span>POUR Principles<span class="nb-sub">The 4 foundations</span></button>
-    <button class="nav-btn" onclick="go('examples',this)"><span class="ni">🎮</span>Interactive Examples<span class="nb-sub">Click to learn</span></button>
     <button class="nav-btn" onclick="go('fixthis',this)"><span class="ni">🔧</span>Can You Fix This?<span class="nb-sub">Test yourself</span></button>
+    <button class="nav-btn" onclick="go('selfaudit',this)"><span class="ni">📋</span>Self-Audit<span class="nb-sub">Try it on your site</span></button>
 
     <div class="nav-label">Tools</div>
     <button class="nav-btn" onclick="go('ask',this)"><span class="ni">🤖</span>Ask the AI</button>
@@ -218,17 +218,17 @@
         <button class="card" onclick="go('pour',document.querySelectorAll('.nav-btn')[1])">
           <div class="ci">📖</div><div class="ctag">Lesson 1</div>
           <div class="ct">POUR Principles</div>
-          <div class="cd">The 4 foundations of accessibility — explained simply with real examples.</div>
+          <div class="cd">The 4 foundations of accessibility — with visual examples from your InclusiTech course.</div>
         </button>
-        <button class="card" onclick="go('examples',document.querySelectorAll('.nav-btn')[2])">
-          <div class="ci">🎮</div><div class="ctag">Interactive</div>
-          <div class="ct">See it in action</div>
-          <div class="cd">Click real examples — contrast, alt text, buttons, Urdu text — and see what passes or fails.</div>
-        </button>
-        <button class="card" onclick="go('fixthis',document.querySelectorAll('.nav-btn')[3])">
+        <button class="card" onclick="go('fixthis',document.querySelectorAll('.nav-btn')[2])">
           <div class="ci">🔧</div><div class="ctag">Quiz</div>
           <div class="ct">Can you fix this?</div>
-          <div class="cd">Spot the accessibility problem and choose the right fix. From your InclusiTech course.</div>
+          <div class="cd">Spot the accessibility problem and choose the right fix.</div>
+        </button>
+        <button class="card" onclick="go('selfaudit',document.querySelectorAll('.nav-btn')[3])">
+          <div class="ci">📋</div><div class="ctag">Exercise</div>
+          <div class="ct">Self-audit</div>
+          <div class="cd">Apply POUR to your own website or social media right now.</div>
         </button>
         <button class="card" onclick="go('ask',document.querySelectorAll('.nav-btn')[4])">
           <div class="ci">🤖</div><div class="ctag">AI Expert</div>
@@ -274,139 +274,323 @@
           <span class="pour-tag">P — Perceivable</span>
           <h3>Everyone should be able to see, hear, or feel your content in some way.</h3>
           <div class="pi-def">If someone can't see, your content should still reach them another way — through sound or touch. If someone can't hear, captions cover it. The key word: <strong>every piece of information must be available in at least one form the user can access.</strong></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
             <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>Alt text on images<br>Captions on videos<br>Colour contrast 4.5:1+<br>Text alternatives for icons</div>
             <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>Images with no alt text<br>Low contrast text<br>"Press the red button" (colour-only instruction)<br>Videos with no captions</div>
           </div>
         </div>
+
+        <!-- VISUAL: Colour contrast like the slide -->
         <div class="ex-box">
-          <div class="ex-head"><span>The "red button" problem — WCAG 1.3.3</span><span class="ex-hint">Click the instruction</span></div>
+          <div class="ex-head"><span>Colour contrast — WCAG 1.4.3</span><span class="ex-hint">Click each box</span></div>
           <div class="ex-body">
-            <div onclick="showR('r-rb')" role="button" tabindex="0" style="padding:12px 16px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:14px;">Press the <span style="color:#dc2626;font-weight:600;">red button</span> to continue →</div>
-            <div id="r-rb" class="result fail"><div class="result-top"><span class="badge fail">FAILS WCAG</span><span class="wtag">1.3.3 Sensory Characteristics</span><span class="wtag">Level A</span></div>This instruction only works if you can see colour. A blind user or someone with colour blindness gets no useful information from "the red button." Fix: <strong>"Press the Continue button"</strong> — use the label, not the colour. This is one of the most common mistakes on Pakistani government portals.</div>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">From your course: can you read me? Click each one to find out why it passes or fails.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;">
+              <div onclick="showR('r-cy1')" role="button" tabindex="0" style="background:#FFD580;border-radius:10px;padding:20px 22px;cursor:pointer;min-width:130px;text-align:center;border:2px solid transparent;transition:border 0.15s;">
+                <div style="font-size:18px;font-weight:600;color:#fff;line-height:1.3;">Can you<br>read me?</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:6px;">Yellow bg, white text</div>
+              </div>
+              <div onclick="showR('r-cy2')" role="button" tabindex="0" style="background:#2563eb;border-radius:10px;padding:20px 22px;cursor:pointer;min-width:130px;text-align:center;border:2px solid transparent;transition:border 0.15s;">
+                <div style="font-size:18px;font-weight:600;color:#fff;line-height:1.3;">Can you<br>read me?</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.75);margin-top:6px;">Blue bg, white text</div>
+              </div>
+              <div onclick="showR('r-cy3')" role="button" tabindex="0" style="background:#FFD580;border-radius:10px;padding:20px 22px;cursor:pointer;min-width:130px;text-align:center;border:2px solid transparent;transition:border 0.15s;">
+                <div style="font-size:18px;font-weight:600;color:#1a1a1a;line-height:1.3;">Can you<br>read me?</div>
+                <div style="font-size:11px;color:rgba(0,0,0,0.5);margin-top:6px;">Yellow bg, dark text</div>
+              </div>
+            </div>
+            <div id="r-cy1" class="result fail"><div class="result-top"><span class="badge fail">FAILS WCAG</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 1.1:1</span></div>White on yellow is nearly invisible — both colours are very light. The contrast ratio is only 1.1:1, far below the 4.5:1 minimum. This is one of the most common mistakes on Pakistani government and education websites.</div>
+            <div id="r-cy2" class="result pass"><div class="result-top"><span class="badge pass">PASSES WCAG</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 8.6:1</span></div>White on blue passes easily — 8.6:1 is nearly double the minimum. This is a reliable, accessible colour combination used widely on accessible government sites.</div>
+            <div id="r-cy3" class="result pass"><div class="result-top"><span class="badge pass">PASSES WCAG</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 9.7:1</span></div>Dark text on yellow is the fix for yellow backgrounds. This combination passes comfortably. Lesson: yellow backgrounds can work — just pair them with dark text, not white.</div>
           </div>
         </div>
+
+        <!-- VISUAL: Alt text like the slide -->
         <div class="ex-box">
-          <div class="ex-head"><span>Alt text — WCAG 1.1.1</span><span class="ex-hint">Click each image</span></div>
+          <div class="ex-head"><span>Alt text for images — WCAG 1.1.1</span><span class="ex-hint">Click each image</span></div>
           <div class="ex-body">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <div onclick="showR('r-alt1')" role="button" tabindex="0" style="width:120px;height:75px;background:#f0f0f0;border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:5px;"><span style="font-size:22px;">🖼️</span><span style="font-size:10px;color:var(--muted);">No alt text</span></div>
-              <div onclick="showR('r-alt2')" role="button" tabindex="0" style="width:120px;height:75px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:5px;"><span style="font-size:22px;">🖼️</span><span style="font-size:10px;color:#3b82f6;">alt="img003.jpg"</span></div>
-              <div onclick="showR('r-alt3')" role="button" tabindex="0" style="width:120px;height:75px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:5px;"><span style="font-size:22px;">🖼️</span><span style="font-size:10px;color:#16a34a;">Good alt ✓</span></div>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Alt text describes images for people who can't see them. A screen reader reads it out loud. Click each image below to hear how a screen reader would describe it.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;">
+
+              <!-- No alt text -->
+              <div onclick="showR('r-alt1')" role="button" tabindex="0" style="width:150px;cursor:pointer;text-align:center;">
+                <div style="width:150px;height:100px;background:#e5e7eb;border-radius:8px;border:2px dashed #d1d5db;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <span style="font-size:10px;color:#9ca3af;">railroad.jpg</span>
+                </div>
+                <div style="font-size:12px;color:var(--muted);margin-top:6px;font-style:italic;">No alt text ❌</div>
+              </div>
+
+              <!-- Bad alt text -->
+              <div onclick="showR('r-alt2')" role="button" tabindex="0" style="width:150px;cursor:pointer;text-align:center;">
+                <div style="width:150px;height:100px;background:#eff6ff;border-radius:8px;border:2px dashed #93c5fd;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <span style="font-size:10px;color:#3b82f6;">alt="img003.jpg"</span>
+                </div>
+                <div style="font-size:12px;color:var(--muted);margin-top:6px;font-style:italic;">Filename as alt ❌</div>
+              </div>
+
+              <!-- Good alt text -->
+              <div onclick="showR('r-alt3')" role="button" tabindex="0" style="width:150px;cursor:pointer;text-align:center;">
+                <div style="width:150px;height:100px;background:#f0fdf4;border-radius:8px;border:2px solid #86efac;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  <span style="font-size:10px;color:#16a34a;text-align:center;line-height:1.3;">"Train tracks with an old building on the side"</span>
+                </div>
+                <div style="font-size:12px;color:var(--muted);margin-top:6px;font-style:italic;">Good alt text ✓</div>
+              </div>
+
             </div>
-            <div id="r-alt1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.1.1</span><span class="wtag">Level A</span></div>Screen reader says: <em>"image"</em>. Blind users have no idea what this shows. Every meaningful image needs a description.</div>
-            <div id="r-alt2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.1.1</span><span class="wtag">Level A</span></div>Screen reader reads: <em>"img zero zero three dot jpg"</em>. A filename is not a description. Write what's actually in the image.</div>
+            <div id="r-alt1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.1.1 Non-text Content</span><span class="wtag">Level A</span></div>Screen reader announces: <em>"image"</em> — nothing else. A blind user has no idea what this photo shows. Every meaningful image must have a text description. Only decorative images (like background patterns) can skip alt text — and even then, use alt="".</div>
+            <div id="r-alt2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.1.1 Non-text Content</span><span class="wtag">Level A</span></div>Screen reader reads: <em>"img zero zero three dot jpg"</em>. That's the file name — not useful at all. Alt text should describe what is actually in the image. Your course example is perfect: <em>"Train Railroad tracks with an old looking building on the side."</em></div>
             <div id="r-alt3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.1.1</span><span class="wtag">Level A</span></div>Good alt text is 1–2 sentences describing what's in the image. Don't start with "image of" — the screen reader says that already.</div>
           </div>
         </div>
       </div>
 
+      <!-- OPERABLE -->
       <div id="pour-o" class="pour-content">
         <div class="pour-intro">
           <span class="pour-tag">O — Operable</span>
           <h3>People should be able to use your website no matter how they navigate it.</h3>
-          <div class="pi-def">Not everyone uses a mouse. People use keyboards, switch controls, voice commands, or touch. Your interface must work with all of them. This also covers timing — don't auto-advance content people haven't finished reading.</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>Tab through forms with keyboard<br>Pause button on slideshows<br>Clearly labelled buttons<br>Large enough touch targets (44px)</div>
-            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>Keyboard gets "trapped" in menus<br>No pause button on auto-playing content<br>Buttons with no label<br>Touch targets too small to tap</div>
+          <div class="pi-def">Not everyone uses a mouse. People navigate with keyboards, switch controls, voice commands, or touch screens. Your interface must work with all of them.</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>Tab through forms with keyboard<br>Pause button on slideshows<br>Clearly labelled buttons<br>Touch targets at least 44×44px</div>
+            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>Keyboard gets trapped in menus<br>No pause on auto-playing content<br>Icon buttons with no label<br>Tiny touch targets on mobile</div>
           </div>
         </div>
+
+        <!-- Button visual examples -->
         <div class="ex-box">
-          <div class="ex-head"><span>Button size &amp; labels — WCAG 2.5.5 &amp; 4.1.2</span><span class="ex-hint">Click each button</span></div>
+          <div class="ex-head"><span>Buttons — WCAG 2.5.5 &amp; 4.1.2</span><span class="ex-hint">Click each button</span></div>
           <div class="ex-body">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-              <button onclick="showR('r-btn1')" style="font-size:10px;padding:3px 6px;background:#e5e7eb;color:#9ca3af;border:none;border-radius:4px;cursor:pointer;font-family:inherit;">click</button>
-              <button onclick="showR('r-btn2')" style="background:none;border:1px solid #d1d5db;border-radius:6px;padding:8px;cursor:pointer;color:#6b7280;">⋯</button>
-              <button onclick="showR('r-btn3')" style="background:var(--green);color:#fff;border:none;border-radius:6px;padding:9px 18px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;">Submit application</button>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">From your course: clearly labelled buttons vs unlabelled ones. Click each to find out what a screen reader experiences.</p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end;">
+
+              <!-- Tiny button -->
+              <div style="text-align:center;">
+                <div style="width:100px;height:80px;background:#f9fafb;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <button onclick="showR('r-btn1')" style="font-size:9px;padding:2px 5px;background:#e5e7eb;color:#9ca3af;border:none;border-radius:3px;cursor:pointer;font-family:inherit;">click</button>
+                </div>
+                <div style="font-size:11px;color:var(--muted);margin-top:6px;">Too small ❌</div>
+              </div>
+
+              <!-- Unlabelled icon button -->
+              <div style="text-align:center;">
+                <div style="width:100px;height:80px;background:#f9fafb;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <button onclick="showR('r-btn2')" style="background:none;border:1px solid #d1d5db;border-radius:6px;padding:10px 12px;cursor:pointer;color:#6b7280;font-size:18px;">⋯</button>
+                </div>
+                <div style="font-size:11px;color:var(--muted);margin-top:6px;">No label ❌</div>
+              </div>
+
+              <!-- Good BUY NOW style button -->
+              <div style="text-align:center;">
+                <div style="width:140px;height:80px;background:#f9fafb;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <button onclick="showR('r-btn3')" style="background:var(--green);color:#fff;border:none;border-radius:20px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;">🛒 BUY NOW</button>
+                </div>
+                <div style="font-size:11px;color:#16a34a;margin-top:6px;">Clear label ✓</div>
+              </div>
+
+              <!-- Arrow only - bad -->
+              <div style="text-align:center;">
+                <div style="width:100px;height:80px;background:#f9fafb;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <button onclick="showR('r-btn4')" style="background:#1a4a2a;color:#fff;border:none;border-radius:20px;padding:10px 18px;font-size:18px;cursor:pointer;">→</button>
+                </div>
+                <div style="font-size:11px;color:var(--muted);margin-top:6px;">Arrow only ❌</div>
+              </div>
+
             </div>
-            <div id="r-btn1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">2.5.5 Target Size</span><span class="wtag">Level AA</span></div>Minimum touch target is <strong>44×44px</strong>. This is far smaller. Users with motor difficulties, or anyone on a phone, will miss it and make errors.</div>
-            <div id="r-btn2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">4.1.2 Name Role Value</span><span class="wtag">Level A</span></div>Screen reader says: <em>"button"</em>. No label means no meaning. Add <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">aria-label="More options"</code> if there's no visible text.</div>
-            <div id="r-btn3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">4.1.2</span><span class="wtag">Level A</span></div>Clear label, good size, good contrast. The label tells the user exactly what happens. This is the standard to aim for.</div>
+            <div id="r-btn1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">2.5.5 Target Size</span><span class="wtag">Level AA</span></div>Minimum touch target is <strong>44×44px</strong>. This button is tiny — anyone on a phone, an older user, or someone with a motor disability will miss it repeatedly. Extremely common on Pakistani banking apps.</div>
+            <div id="r-btn2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">4.1.2 Name Role Value</span><span class="wtag">Level A</span></div>Screen reader says: <em>"button"</em> — no idea what it does. Icon-only buttons must have an <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">aria-label</code> describing the action, like <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">aria-label="More options"</code>.</div>
+            <div id="r-btn3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">4.1.2</span><span class="wtag">Level A</span></div>Clear visible label, good size, strong contrast. Screen reader announces: <em>"BUY NOW, button"</em>. The user knows exactly what will happen. This is the standard from your course.</div>
+            <div id="r-btn4" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">4.1.2 Name Role Value</span><span class="wtag">Level A</span></div>An arrow icon tells a sighted user "next" — but a screen reader just says <em>"button"</em>. Add visible text or an aria-label: <em>"Next page"</em>, <em>"Continue"</em>, <em>"Submit"</em>. Always describe the action.</div>
+          </div>
+        </div>
+
+        <!-- Keyboard demo -->
+        <div class="ex-box">
+          <div class="ex-head"><span>Keyboard navigation — WCAG 2.1.1</span><span class="ex-hint">Click each scenario</span></div>
+          <div class="ex-body">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">From your course: pressing keyboard buttons should control the screen. Click each scenario below.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <div onclick="showR('r-kb1')" role="button" tabindex="0" style="flex:1;min-width:160px;background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;padding:14px;cursor:pointer;text-align:center;">
+                <div style="font-size:28px;margin-bottom:6px;">⌨️</div>
+                <div style="font-size:13px;font-weight:500;color:#dc2626;">Pressing Tab doesn't move focus</div>
+              </div>
+              <div onclick="showR('r-kb2')" role="button" tabindex="0" style="flex:1;min-width:160px;background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;padding:14px;cursor:pointer;text-align:center;">
+                <div style="font-size:28px;margin-bottom:6px;">🎠</div>
+                <div style="font-size:13px;font-weight:500;color:#dc2626;">Slideshow auto-advances with no pause</div>
+              </div>
+              <div onclick="showR('r-kb3')" role="button" tabindex="0" style="flex:1;min-width:160px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;cursor:pointer;text-align:center;">
+                <div style="font-size:28px;margin-bottom:6px;">✅</div>
+                <div style="font-size:13px;font-weight:500;color:#16a34a;">Tab moves through menu, Enter activates</div>
+              </div>
+            </div>
+            <div id="r-kb1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">2.1.1 Keyboard</span><span class="wtag">Level A</span></div>If pressing Tab doesn't visibly move focus, keyboard-only users are completely stuck. They cannot navigate your site. This is one of the most common failures on custom-built Pakistani government portals.</div>
+            <div id="r-kb2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">2.2.2 Pause Stop Hide</span><span class="wtag">Level A</span></div>Auto-playing slideshows without a pause button are disorienting for users with attention or cognitive disabilities, and inaccessible for screen reader users. Always add a visible pause control.</div>
+            <div id="r-kb3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">2.1.1 Keyboard</span><span class="wtag">Level A</span></div>Full keyboard operability. Tab moves focus, Enter/Space activates. Users who cannot use a mouse can navigate your entire site. This must work for every menu, form, button, and dropdown.</div>
           </div>
         </div>
       </div>
 
+      <!-- UNDERSTANDABLE -->
       <div id="pour-u" class="pour-content">
         <div class="pour-intro">
           <span class="pour-tag">U — Understandable</span>
           <h3>Your content and instructions should be clear and easy to follow for everyone.</h3>
-          <div class="pi-def">This is about language and behaviour. Use plain language. Make errors helpful, not cryptic. Don't use jargon when a simple phrase works. If something behaves unexpectedly, users get confused — even if it technically "works."</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>"Log in with your username and password"<br>Error: "Password must be 8+ characters"<br>Consistent navigation across pages<br>Form labels visible at all times</div>
-            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>"Authenticate your credentials"<br>Error: "System Error"<br>Navigation changes between pages<br>Placeholder text disappears when you type</div>
+          <div class="pi-def">This is about language and behaviour. Use plain language. Make errors helpful, not cryptic. If something behaves unexpectedly, users get confused — even if it technically "works."</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>"Log in with your username and password"<br>Error: "Password must be 8+ characters"<br>Consistent navigation across pages<br>Form labels always visible</div>
+            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>"Authenticate your credentials"<br>Error: "System Error"<br>Navigation changes between pages<br>Placeholder disappears when you type</div>
           </div>
         </div>
+
+        <!-- Jargon visual comparison -->
+        <div class="ex-box">
+          <div class="ex-head"><span>Plain language — WCAG 3.1.5</span><span class="ex-hint">Click each example</span></div>
+          <div class="ex-body">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">From your course: "Authenticate your credentials" vs "Log in with your username and password." Click each to see the difference.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <div onclick="showR('r-lang1')" role="button" tabindex="0" style="flex:1;min-width:200px;border-radius:8px;overflow:hidden;cursor:pointer;">
+                <div style="background:#1a3a5c;padding:12px 16px;">
+                  <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:4px;">Login page — technical version</div>
+                </div>
+                <div style="background:#f0f4f8;border:1px solid #d1d5db;border-top:none;padding:14px 16px;">
+                  <div style="font-size:13px;color:#374151;margin-bottom:8px;">Please authenticate your credentials to access the secure portal.</div>
+                  <div style="background:#fff;border:1px solid #d1d5db;border-radius:4px;padding:6px 10px;font-size:12px;color:#6b7280;margin-bottom:6px;">Username</div>
+                  <div style="background:#fff;border:1px solid #d1d5db;border-radius:4px;padding:6px 10px;font-size:12px;color:#6b7280;">Password</div>
+                </div>
+              </div>
+              <div onclick="showR('r-lang2')" role="button" tabindex="0" style="flex:1;min-width:200px;border-radius:8px;overflow:hidden;cursor:pointer;">
+                <div style="background:#1a6b45;padding:12px 16px;">
+                  <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:4px;">Login page — plain language version</div>
+                </div>
+                <div style="background:#f0fdf4;border:1px solid #86efac;border-top:none;padding:14px 16px;">
+                  <div style="font-size:13px;color:#374151;margin-bottom:8px;">Log in with your username and password.</div>
+                  <div style="background:#fff;border:1px solid #86efac;border-radius:4px;padding:6px 10px;font-size:12px;color:#6b7280;margin-bottom:6px;">Username</div>
+                  <div style="background:#fff;border:1px solid #86efac;border-radius:4px;padding:6px 10px;font-size:12px;color:#6b7280;">Password</div>
+                </div>
+              </div>
+            </div>
+            <div id="r-lang1" class="result fail"><div class="result-top"><span class="badge fail">CONFUSING</span><span class="wtag">3.1.5 Reading Level</span><span class="wtag">Level AAA</span></div>"Authenticate your credentials" is jargon. Many users — especially those with low literacy, dyslexia, or who speak Urdu as their first language — will not know what this means. Simple plain language costs nothing and serves everyone.</div>
+            <div id="r-lang2" class="result pass"><div class="result-top"><span class="badge pass">CLEAR</span><span class="wtag">3.1.5 Reading Level</span><span class="wtag">Level AAA</span></div>"Log in with your username and password" is instantly understood by anyone who can read. This is exactly what your course teaches: accessibility and good UX are the same thing.</div>
+          </div>
+        </div>
+
+        <!-- Error message visual -->
         <div class="ex-box">
           <div class="ex-head"><span>Error messages — WCAG 3.3.1</span><span class="ex-hint">Click each error</span></div>
           <div class="ex-body">
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <div onclick="showR('r-err1')" tabindex="0" role="button" style="padding:10px 14px;background:#fee2e2;border:1px solid #fca5a5;border-radius:6px;cursor:pointer;font-size:14px;font-weight:500;color:#dc2626;">❌ System Error</div>
-              <div onclick="showR('r-err2')" tabindex="0" role="button" style="padding:10px 14px;background:#fee2e2;border:1px solid #fca5a5;border-radius:6px;cursor:pointer;font-size:14px;font-weight:500;color:#dc2626;">❌ Invalid input</div>
-              <div onclick="showR('r-err3')" tabindex="0" role="button" style="padding:10px 14px;background:#fef9c3;border:1px solid #fde68a;border-radius:6px;cursor:pointer;font-size:14px;font-weight:500;color:#854d0e;">⚠️ Please enter a valid CNIC number (e.g. 35201-1234567-1)</div>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">From your course: a vague "System Error" vs a helpful error. Click each one.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+
+              <!-- Bad error -->
+              <div onclick="showR('r-err1')" role="button" tabindex="0" style="flex:1;min-width:180px;cursor:pointer;">
+                <div style="background:#fff;border:2px solid #ef4444;border-radius:8px;overflow:hidden;">
+                  <div style="background:#ef4444;padding:8px 12px;display:flex;align-items:center;gap:8px;">
+                    <span style="color:#fff;font-size:13px;font-weight:600;">Error</span>
+                  </div>
+                  <div style="padding:14px;text-align:center;">
+                    <div style="font-size:32px;margin-bottom:6px;">✕</div>
+                    <div style="font-size:14px;font-weight:500;color:#dc2626;margin-bottom:10px;">System Error</div>
+                    <div style="background:#ef4444;color:#fff;padding:6px 16px;border-radius:4px;font-size:13px;display:inline-block;">Ok</div>
+                  </div>
+                </div>
+                <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;">Vague error ❌</div>
+              </div>
+
+              <!-- Good error -->
+              <div onclick="showR('r-err3')" role="button" tabindex="0" style="flex:1;min-width:180px;cursor:pointer;">
+                <div style="background:#fff;border:2px solid #f59e0b;border-radius:8px;overflow:hidden;">
+                  <div style="background:#fef9c3;padding:10px 14px;display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:18px;">⚠️</span>
+                    <span style="font-size:13px;font-weight:600;color:#92400e;">Please check your CNIC number</span>
+                  </div>
+                  <div style="padding:12px 14px;font-size:13px;color:#374151;line-height:1.5;">
+                    Enter your CNIC in this format:<br><strong>35201-1234567-1</strong>
+                  </div>
+                </div>
+                <div style="font-size:11px;color:#16a34a;text-align:center;margin-top:6px;">Helpful error ✓</div>
+              </div>
+
             </div>
-            <div id="r-err1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">3.3.1 Error Identification</span><span class="wtag">Level A</span></div>"System Error" tells the user nothing. What went wrong? What should they do? Every error must describe the problem and how to fix it.</div>
-            <div id="r-err2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">3.3.1</span><span class="wtag">Level A</span></div>"Invalid input" is too vague. Which field? What's wrong with it? Users try random things and give up. Extremely common on Pakistani government forms.</div>
-            <div id="r-err3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">3.3.1</span><span class="wtag">Level A</span></div>Good error: tells the user exactly what field, what format is expected, and gives an example. One sentence can prevent minutes of frustration.</div>
+            <div id="r-err1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">3.3.1 Error Identification</span><span class="wtag">Level A</span></div>"System Error" tells the user nothing — what went wrong? Which field? What should they do? Users try random things and give up. This is the most common form failure on Pakistani government portals.</div>
+            <div id="r-err3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">3.3.1 Error Identification</span><span class="wtag">Level A</span></div>Good error: identifies the exact field, explains the problem, and gives a format example. One clear sentence prevents minutes of frustration — and stops users from abandoning forms entirely.</div>
           </div>
         </div>
       </div>
 
+      <!-- ROBUST -->
       <div id="pour-r" class="pour-content">
         <div class="pour-intro">
           <span class="pour-tag">R — Robust</span>
           <h3>Your website should work with all kinds of devices and assistive technologies.</h3>
-          <div class="pi-def">A website that works in Chrome on your laptop but breaks on a screen reader isn't accessible. Robust means testing with real assistive tech — NVDA, JAWS, VoiceOver — and making sure your code is valid enough that these tools can interpret it correctly.</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>Valid HTML structure<br>ARIA roles and labels used correctly<br>Tested with NVDA screen reader<br>Works on mobile, tablet, and desktop</div>
-            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>Only tested in Chrome on one laptop<br>Screen reader can't find the main content<br>JavaScript pop-ups that trap keyboard focus<br>Custom components with no ARIA markup</div>
+          <div class="pi-def">A website that works in Chrome on your laptop but breaks on a screen reader isn't accessible. Robust means your code is clean enough that any device or assistive technology can read it correctly.</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">✅ Good examples</strong>Works on mobile, tablet, and desktop<br>Screen reader can navigate the page<br>Correct Urdu RTL direction set<br>Valid, semantic HTML</div>
+            <div style="background:var(--fail-bg);border:1px solid #fecaca;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;flex:1;min-width:160px;"><strong style="display:block;margin-bottom:4px;">❌ Common mistakes</strong>Only tested in Chrome on one laptop<br>Screen reader can't find the content<br>Urdu text rendered left-to-right<br>Custom dropdowns not keyboard accessible</div>
           </div>
         </div>
-        <div class="ex-box">
-          <div class="ex-head"><span>Urdu &amp; right-to-left — Pakistan-specific</span><span class="ex-hint">Click each example</span></div>
-          <div class="ex-body">
-            <div style="display:flex;flex-direction:column;gap:9px;">
-              <div onclick="showR('r-rtl1')" tabindex="0" role="button" style="padding:12px 14px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:16px;text-align:left;direction:ltr;">خوش آمدید — Welcome &nbsp;<span style="font-size:11px;color:var(--muted);">(no dir attribute)</span></div>
-              <div onclick="showR('r-rtl2')" tabindex="0" role="button" style="padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;cursor:pointer;font-size:16px;text-align:right;direction:rtl;" lang="ur">خوش آمدید — Welcome &nbsp;<span style="font-size:11px;color:#16a34a;direction:ltr;display:inline-block;">(dir="rtl" lang="ur")</span></div>
-            </div>
-            <div id="r-rtl1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.3.2 Meaningful Sequence</span><span class="wtag">Level A</span></div>Without <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">dir="rtl"</code>, Urdu text renders left-to-right. Screen readers read it in the wrong order. This breaks almost every Urdu government website in Pakistan.</div>
-            <div id="r-rtl2" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.3.2</span><span class="wtag">Level A</span></div>Adding <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">dir="rtl" lang="ur"</code> tells the browser and screen reader the text runs right-to-left. Every Urdu section of every Pakistani website needs this.</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- INTERACTIVE EXAMPLES -->
-    <div id="s-examples" class="screen">
-      <div class="screen-header">
-        <h2>Interactive examples</h2>
-        <p>Click anything below to find out whether it passes WCAG — and exactly why it matters. No jargon.</p>
-      </div>
-      <div class="ex-box">
-        <div class="ex-head"><span>Colour contrast — WCAG 1.4.3</span><span class="ex-hint">Click each swatch</span></div>
-        <div class="ex-body">
-          <div class="swatches">
-            <div class="swatch" style="background:#fff;color:#aaa;" onclick="showR('c1')">Light grey on white</div>
-            <div class="swatch" style="background:#FFD700;color:#fff;" onclick="showR('c2')">White on yellow</div>
-            <div class="swatch" style="background:#1a6b45;color:#fff;" onclick="showR('c3')">White on green</div>
-            <div class="swatch" style="background:#003087;color:#fff;" onclick="showR('c4')">White on navy</div>
+        <!-- Device testing visual -->
+        <div class="ex-box">
+          <div class="ex-head"><span>Works everywhere — WCAG 4.1.1</span><span class="ex-hint">Click each device</span></div>
+          <div class="ex-body">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">From your course: only testing on one laptop is a mistake. Click each scenario.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+
+              <!-- Laptop only - bad -->
+              <div onclick="showR('r-dev1')" role="button" tabindex="0" style="flex:1;min-width:130px;text-align:center;cursor:pointer;">
+                <div style="background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="font-size:36px;">💻</div>
+                  <div style="font-size:12px;color:#dc2626;font-weight:500;">Laptop only</div>
+                  <div style="font-size:28px;opacity:0.3;">📱 🖥️</div>
+                </div>
+                <div style="font-size:11px;color:var(--muted);margin-top:6px;">Incomplete ❌</div>
+              </div>
+
+              <!-- All devices - good -->
+              <div onclick="showR('r-dev2')" role="button" tabindex="0" style="flex:1;min-width:130px;text-align:center;cursor:pointer;">
+                <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="font-size:28px;">💻 📱 🖥️</div>
+                  <div style="font-size:12px;color:#16a34a;font-weight:500;">All devices tested</div>
+                </div>
+                <div style="font-size:11px;color:#16a34a;margin-top:6px;">Works everywhere ✓</div>
+              </div>
+
+              <!-- Screen reader - important -->
+              <div onclick="showR('r-dev3')" role="button" tabindex="0" style="flex:1;min-width:130px;text-align:center;cursor:pointer;">
+                <div style="background:#eff6ff;border:1px solid #93c5fd;border-radius:8px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div style="font-size:36px;">🔊</div>
+                  <div style="font-size:12px;color:#1d4ed8;font-weight:500;">Screen reader test</div>
+                </div>
+                <div style="font-size:11px;color:var(--muted);margin-top:6px;">Most important test</div>
+              </div>
+
+            </div>
+            <div id="r-dev1" class="result fail"><div class="result-top"><span class="badge fail">INCOMPLETE</span><span class="wtag">4.1.1 Parsing</span><span class="wtag">Level A</span></div>Testing only on a laptop in Chrome misses the majority of users. In Pakistan, most people access the internet primarily on mobile phones. A site that breaks on mobile fails a huge portion of the population.</div>
+            <div id="r-dev2" class="result pass"><div class="result-top"><span class="badge pass">GOOD PRACTICE</span><span class="wtag">4.1.1 Parsing</span><span class="wtag">Level A</span></div>Testing across devices is the minimum. Check on an Android phone (most common in Pakistan), an iOS device, and a large desktop monitor. Things that look fine on a laptop often break on a small screen.</div>
+            <div id="r-dev3" class="result pass"><div class="result-top"><span class="badge pass">MOST IMPORTANT</span><span class="wtag">4.1.2 Name Role Value</span><span class="wtag">Level A</span></div>The most revealing test: download NVDA (free, Windows) and try navigating your site with eyes closed. Five minutes of screen reader testing will show more accessibility failures than any automated tool. This is what your course recommends.</div>
           </div>
-          <div id="c1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 2.3:1</span></div>Needs at least 4.5:1. This barely reaches 2.3:1. Useless for users with low vision, colour blindness, or bright sunlight on screen. Darken the text.</div>
-          <div id="c2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 1.1:1</span></div>White on yellow is nearly invisible — both colours are very light. This is one of the most common mistakes on Pakistani government and education websites. Use dark text on yellow instead.</div>
-          <div id="c3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 9.1:1</span></div>Excellent — 9.1:1 is double the minimum. White on dark green is a reliable, accessible combination.</div>
-          <div id="c4" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.4.3 Contrast</span><span class="wtag">Level AA</span><span class="wtag">Ratio: 14.1:1</span></div>Passes comfortably. White on navy blue is one of the highest-contrast combinations available.</div>
         </div>
-      </div>
-      <div class="ex-box">
-        <div class="ex-head"><span>Headings &amp; structure — WCAG 1.3.1</span><span class="ex-hint">Click each heading style</span></div>
-        <div class="ex-body">
-          <div style="display:flex;flex-direction:column;gap:9px;">
-            <div onclick="showR('h1')" role="button" tabindex="0" style="padding:10px 14px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;cursor:pointer;"><span style="font-size:20px;font-weight:700;">Our Services</span> <span style="font-size:11px;color:var(--muted);">(bold div, not a heading tag)</span></div>
-            <div onclick="showR('h2')" role="button" tabindex="0" style="padding:10px 14px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:13px;color:var(--muted);">H1 → H3 (skipping H2)</div>
-            <div onclick="showR('h3')" role="button" tabindex="0" style="padding:10px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;cursor:pointer;font-size:13px;color:#16a34a;">H1 → H2 → H3 (correct order) ✓</div>
+
+        <!-- Urdu RTL visual -->
+        <div class="ex-box">
+          <div class="ex-head"><span>Urdu right-to-left text — Pakistan-specific</span><span class="ex-hint">Click each example</span></div>
+          <div class="ex-body">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">This is one of the most common failures on Pakistani websites. Urdu reads right-to-left — but most sites code it left-to-right by mistake.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div onclick="showR('r-rtl1')" role="button" tabindex="0" style="cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid #fca5a5;">
+                <div style="background:#fee2e2;padding:6px 12px;font-size:11px;color:#dc2626;font-weight:600;">❌ Wrong — direction: LTR (left-to-right)</div>
+                <div style="padding:12px 16px;background:#fff;font-size:18px;text-align:left;direction:ltr;line-height:1.8;">خوش آمدید پاکستان — یہ ایک ٹیسٹ ہے</div>
+              </div>
+              <div onclick="showR('r-rtl2')" role="button" tabindex="0" style="cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid #86efac;">
+                <div style="background:#f0fdf4;padding:6px 12px;font-size:11px;color:#16a34a;font-weight:600;">✓ Correct — direction: RTL (right-to-left)</div>
+                <div style="padding:12px 16px;background:#fff;font-size:18px;text-align:right;direction:rtl;line-height:1.8;" lang="ur">خوش آمدید پاکستان — یہ ایک ٹیسٹ ہے</div>
+              </div>
+            </div>
+            <div id="r-rtl1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.3.2 Meaningful Sequence</span><span class="wtag">Level A</span></div>Without <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">dir="rtl"</code>, Urdu text is forced left-to-right — the reading direction is backwards. Screen readers read it in the wrong order. This breaks almost every Urdu government website in Pakistan.</div>
+            <div id="r-rtl2" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.3.2 Meaningful Sequence</span><span class="wtag">Level A</span></div>Two HTML attributes fix this completely: <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">dir="rtl" lang="ur"</code>. This tells the browser and screen reader the text flows right-to-left. Every Urdu section of every Pakistani website needs these two attributes.</div>
           </div>
-          <div id="h1" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.3.1 Info and Relationships</span><span class="wtag">Level A</span></div>Making text big and bold looks like a heading but isn't one. Screen reader users navigate by jumping between real <code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:11px;">&lt;h2&gt;</code> tags — they'll skip this entirely.</div>
-          <div id="h2" class="result fail"><div class="result-top"><span class="badge fail">FAILS</span><span class="wtag">1.3.1</span><span class="wtag">Level A</span></div>Skipping heading levels (H1 → H3) breaks the page outline. Screen readers rely on heading order to understand structure — like a book jumping from chapter 1 to chapter 3.</div>
-          <div id="h3" class="result pass"><div class="result-top"><span class="badge pass">PASSES</span><span class="wtag">1.3.1</span><span class="wtag">Level A</span></div>Correct order creates a clear outline. Screen reader users can jump between headings to find what they need — like a table of contents. One of the highest-impact fixes on any page.</div>
         </div>
       </div>
     </div>
@@ -418,6 +602,56 @@
         <p>Spot the accessibility problem and choose the right fix. These scenarios come directly from your InclusiTech course.</p>
       </div>
       <div id="quiz-container"></div>
+    </div>
+
+    <!-- SELF AUDIT -->
+    <div id="s-selfaudit" class="screen">
+      <div class="screen-header">
+        <h2>POUR self-audit mini exercise</h2>
+        <p>Open your own website or social media account and work through this. The first step in accessibility is awareness — start small, and you'll already be ahead of most businesses in Pakistan.</p>
+      </div>
+      <div style="background:var(--green-light);border:1px solid #bbddd0;border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;font-size:14px;line-height:1.7;">
+        <strong>What you need:</strong> Your company website, social media page, or any digital platform your organisation runs. You're going to look at it with fresh eyes.
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--green);margin-bottom:8px;">P — Perceivable</div>
+          <div style="font-size:14px;font-weight:500;margin-bottom:10px;">One thing that passes ✅</div>
+          <textarea style="width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;resize:vertical;min-height:52px;outline:none;" placeholder="e.g. Our logo has alt text that says our company name"></textarea>
+          <div style="font-size:14px;font-weight:500;margin:10px 0;">One thing that fails ❌</div>
+          <textarea style="width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;resize:vertical;min-height:52px;outline:none;" placeholder="e.g. Our banner images have no alt text at all"></textarea>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--green);margin-bottom:8px;">O — Operable</div>
+          <div style="font-size:14px;font-weight:500;margin-bottom:4px;">Quick test: press Tab on your keyboard while on your website. Can you reach the menu, buttons, and forms without a mouse?</div>
+          <div style="display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;">
+            <button onclick="auditPick(this,'yes')" class="audit-opt" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">✅ Yes it works</button>
+            <button onclick="auditPick(this,'no')" class="audit-opt" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">❌ No it doesn't</button>
+            <button onclick="auditPick(this,'unsure')" class="audit-opt" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">🤔 I'm not sure</button>
+          </div>
+          <div id="audit-o-result" style="font-size:13px;color:var(--muted);display:none;padding:8px 10px;background:var(--bg);border-radius:6px;line-height:1.6;"></div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--green);margin-bottom:8px;">U — Understandable</div>
+          <div style="font-size:14px;font-weight:500;margin-bottom:10px;">One thing that fails ❌</div>
+          <textarea style="width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;resize:vertical;min-height:52px;outline:none;" placeholder="e.g. Our contact form just says 'Error' when something goes wrong — it doesn't say what the error is"></textarea>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--green);margin-bottom:8px;">R — Robust</div>
+          <div style="font-size:14px;font-weight:500;margin-bottom:4px;">Have you ever tested your website on a phone, a tablet, and a laptop?</div>
+          <div style="display:flex;gap:10px;margin:10px 0;flex-wrap:wrap;">
+            <button onclick="auditPick2(this,'yes')" class="audit-opt2" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">✅ Yes, all three</button>
+            <button onclick="auditPick2(this,'some')" class="audit-opt2" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">⚠️ Only one or two</button>
+            <button onclick="auditPick2(this,'no')" class="audit-opt2" style="padding:8px 18px;border:1px solid var(--border);border-radius:6px;background:var(--bg);font-size:13px;cursor:pointer;font-family:inherit;">❌ Never tested</button>
+          </div>
+          <div id="audit-r-result" style="font-size:13px;color:var(--muted);display:none;padding:8px 10px;background:var(--bg);border-radius:6px;line-height:1.6;"></div>
+        </div>
+        <div style="background:var(--green);border-radius:var(--radius);padding:16px 18px;color:#fff;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:8px;">One small fix you will make this week</div>
+          <textarea style="width:100%;border:1px solid rgba(255,255,255,0.3);border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;resize:vertical;min-height:52px;outline:none;background:rgba(255,255,255,0.15);color:#fff;" placeholder="e.g. I will add alt text to the 3 images on our homepage..."></textarea>
+          <div style="font-size:12px;margin-top:8px;opacity:0.8;">Progress over perfection — one fix this week puts you ahead of most businesses in Pakistan.</div>
+        </div>
+      </div>
     </div>
 
     <!-- ASK THE AI -->
@@ -529,8 +763,8 @@
 const titles = {
   home:['Home','Pakistan Digital Accessibility Initiative'],
   pour:['POUR Principles','The 4 foundations of WCAG'],
-  examples:['Interactive Examples','Click anything to learn'],
   fixthis:['Can You Fix This?','Test your knowledge'],
+  selfaudit:['POUR Self-Audit','Try it on your own website'],
   ask:['Ask the AI','Your accessibility expert'],
   advisor:['Compliance Advisor','Practical guidance for your platform'],
   quickref:['Quick Reference','Filtered by role'],
@@ -544,6 +778,24 @@ function go(id, btn) {
   const t = titles[id];
   document.getElementById('tb-title').textContent = t[0];
   document.getElementById('tb-sub').textContent = t[1];
+}
+
+// ── Self audit buttons ──
+function auditPick(btn, val) {
+  document.querySelectorAll('.audit-opt').forEach(b=>{ b.style.background='var(--bg)'; b.style.borderColor='var(--border)'; });
+  btn.style.background = val==='yes' ? 'var(--pass-bg)' : val==='no' ? 'var(--fail-bg)' : 'var(--warn-bg)';
+  btn.style.borderColor = val==='yes' ? '#bbddd0' : val==='no' ? '#fecaca' : '#fde68a';
+  const msgs = { yes:'Great — keyboard navigation works on your site. This is one of the most important things to get right.', no:'This is a critical issue. Users who can\'t use a mouse — including many people with disabilities — are completely locked out. Flag this to your developer as a priority fix.', unsure:'Test it now: go to your website, put your mouse aside, and press Tab repeatedly. See if you can reach the menu and any buttons or forms. If you get stuck anywhere, that\'s a failure.' };
+  const r = document.getElementById('audit-o-result');
+  r.textContent = msgs[val]; r.style.display='block';
+}
+function auditPick2(btn, val) {
+  document.querySelectorAll('.audit-opt2').forEach(b=>{ b.style.background='var(--bg)'; b.style.borderColor='var(--border)'; });
+  btn.style.background = val==='yes' ? 'var(--pass-bg)' : val==='no' ? 'var(--fail-bg)' : 'var(--warn-bg)';
+  btn.style.borderColor = val==='yes' ? '#bbddd0' : val==='no' ? '#fecaca' : '#fde68a';
+  const msgs = { yes:'Good — testing across devices is the foundation of Robust. Also consider testing with a screen reader (NVDA is free for Windows).', some:'Test on the devices you haven\'t tried yet. Mobile is especially important — most Pakistanis access the internet primarily on phones.', no:'Start today: pull out your phone, open your website, and see if everything works. Most accessibility issues become obvious immediately on a phone.' };
+  const r = document.getElementById('audit-r-result');
+  r.textContent = msgs[val]; r.style.display='block';
 }
 
 // ── POUR tabs ──
